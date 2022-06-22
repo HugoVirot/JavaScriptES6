@@ -9,7 +9,7 @@ const {first, last} = {first: 'Paul', last: 'Henta', age: 35}
 console.log(first)
 console.log(last)
 
-const [,,c,] = [1, 2, 3, 4] 
+const [,,c] = [1, 2, 3, 4] 
 console.log(c)
 
 const {age} = {first: 'Paul', last: 'Henta', age: 35}
@@ -20,8 +20,8 @@ console.log(age)
 //afficher texte, date de début et date de fin
 
 
-Object.values(data).forEach(function (element)
+Object.values(data).forEach( element =>
 {   
-    var {dateDebut, dateFin, texte} = element;
+    const {dateDebut, dateFin, texte} = element;
     console.log(dateDebut, dateFin, texte);
 });

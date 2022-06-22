@@ -1,15 +1,9 @@
 //2.1 Fonctions simples
-const sayHello = () => {
-    console.log('Hello')
-}
+const sayHello = () => console.log('Hello')
 
-const sayMyName = (first, last) => {
-    console.log(first, last)
-}
+const sayMyName = (first, last) => console.log(first, last)
 
-const sayMyAge = (age) => {
-    console.log('You are ' + age + ' years old')
-}
+const sayMyAge = age => console.log('You are ' + age + ' years old')
 
 sayHello()
 sayMyName('Odile', 'Crok')
@@ -33,7 +27,7 @@ object.showThis()                   //on affiche l'objet en appelant la fonction
 // Quand on remplace "this" par du texte, cela fonctionne.
 // => Le this utilisé dans une fonction fléchée a une portée limitée à cette fonction.
 //  => Ici, this ne fait donc pas référence à l'objet qui englobe la fonction.
-//     => faut donc remettre la syntaxe classique function(){} pour pourvoir afficher l'objet.
+//     => Il faut donc remettre la syntaxe classique function(){} pour pourvoir afficher l'objet.
 
 
 
@@ -46,12 +40,12 @@ const odile = {
         last: 'Crok'
     },
     age: 23,
-    sayHello: () => {
-        console.log('Hello')},
-    sayMyName: () => {
-        console.log(odile.name.first, odile.name.last)},
-    sayMyAge: (age) => {
-        console.log('You are ' + odile.age + ' years old')}
+    sayHello: () => console.log('Hello'),
+    //solution 1 : fonction fléchée
+    // sayMyName: () => console.log(odile.name.first, odile.name.last),
+    //solution 2 : fonction classique + this
+    sayMyName: function () { console.log(this.name.first, this.name.last) },
+    sayMyAge: () => console.log('You are ' + odile.age + ' years old')
 }
 
 odile.sayHello()

@@ -17,8 +17,5 @@ console.log(Object.entries(bus));
 
 //3.2 Object.values
 
-Object.values(data).forEach(function(element)
-{
-    console.log(element.texte)
-})
+Object.values(data).forEach(element => console.log(element.texte))
 
